@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ECS_CLUSTER_NAME="ecs-cluster-name"
-ECS_SERVICE_NAME="ecs-service-name"
-UPSCALE_DESIRED_COUNT=3
-DOWNSCALE_DESIRED_COUNT=1
+ECS_CLUSTER_NAME="scaling-cluster1"
+ECS_SERVICE_NAME="scaling-service"
+UPSCALE_DESIRED_COUNT=1
+DOWNSCALE_DESIRED_COUNT=0
 
 upscale() {
   aws ecs update-service --cluster $ECS_CLUSTER_NAME --service $ECS_SERVICE_NAME --desired-count $UPSCALE_DESIRED_COUNT
