@@ -18,7 +18,7 @@ downscale() {
 }
 
 # Usage
-if [ "$2" == "upscale" ]; then
+if [ "$1" == "upscale" ]; then
   upscale
 elif [ "$1" == "downscale" ]; then
   downscale
