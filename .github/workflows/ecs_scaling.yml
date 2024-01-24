@@ -9,6 +9,9 @@ jobs:
   ecs_scaling:
     runs-on: ubuntu-latest
 
+    env:
+      DESIRED_COUNT: ${{ secrets.DESIRED_COUNT }}
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -27,5 +30,3 @@ jobs:
         run: |
           chmod +x multi-ecs-scaling.sh
           ./multi-ecs-scaling.sh $DESIRED_COUNT
-        env:
-          DESIRED_COUNT: ${{ secrets.DESIRED_COUNT }}
