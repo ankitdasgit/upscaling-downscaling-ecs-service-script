@@ -35,36 +35,4 @@ jobs:
 
 
 
-
-
-
-
-
-
-# name: ECS Scaling
-
-# on:
-#   push:
-#     branches:
-#       - main  # Adjust the branch as needed
-
-# jobs:
-#   ecs_scaling:
-#     runs-on: ubuntu-latest
-
-#     env:
-#       DESIRED_COUNT: ${{ secrets.DESIRED_COUNT }}
-
-#     steps:
-#       - name: Checkout Repository
-#         uses: actions/checkout@v2
-
-#       - name: Install AWS CLI
-#         run: |
-#           sudo apt-get update
-#           sudo apt-get install -y awscli
-
-#       - name: Execute ECS Scaling
-#         run: |
-#           chmod +x multi-ecs-scaling.sh
-#           ./multi-ecs-scaling.sh ${{ github.event_name }}
+      
