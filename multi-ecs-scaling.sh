@@ -13,7 +13,7 @@ upscale() {
             for service in $services; do
                 service_name=$(aws ecs describe-services --cluster $cluster --services $service --query "services[0].serviceName" --output text)
                 aws ecs update-service --cluster $cluster_name --service $service_name --desired-count $UPSCALE_DESIRED_COUNT
-                # aws ecs wait services-stable --cluster $cluster_name --services $service_name
+                aws ecs wait services-stable --cluster $cluster_name --services $service_name
                 echo "  - $service_name"
             done
         else
